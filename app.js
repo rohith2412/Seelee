@@ -264,4 +264,11 @@ app.get("/contact", (req, res) => {
     res.render("contact", { userLoggedIn: req.userLoggedIn });
 });
 
-app.listen(2000);
+const db = process.env.MONGODB_URI;
+
+mongoose.connect(db, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => console.log("MongoDB connected"))
+.catch(err => console.error("MongoDB connection error:", err));
