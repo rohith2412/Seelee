@@ -4,15 +4,17 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const ownerModel = require('./models/ownerModel');
 const bcrypt = require('bcryptjs');
-const productModel = require('./models/productModel');
+
+const db = require("./config/mongooseConnections");
+const multer = require('multer');
 const userModel = require("./models/userModel");
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const multer = require('multer');
 const app = express();
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
+const productModel = require('./models/productModel');
 
 app.set("view engine", "ejs");
 app.use(express.json());
@@ -262,9 +264,4 @@ app.get("/contact", (req, res) => {
     res.render("contact", { userLoggedIn: req.userLoggedIn });
 });
 
-
-const mongoURI = process.env.MONGODB_URI;
-
-mongoose.connect(mongoURI)
-    .then(() => console.log("MongoDB connected"))
-    .catch(err => console.error("MongoDB connection error:", err));
+app.listen(2000);
