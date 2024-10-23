@@ -1,0 +1,30 @@
+<%- include('./partials/header') %>
+
+<div class="Items">
+    <% if (products.length === 0) { %>
+        <p class="No-Products">No products available.</p>
+    <% } else { %>
+        <% products.forEach(function(product) { %>
+            <div class="Products">
+                <div class="product-image">
+                    <% if (product.picture) { %>
+                        <img src="data:image/jpeg;base64,<%= product.picture.toString('base64') %>" alt="<%= product.product.name %>">
+                    <% } else { %>
+                        <img src="/path/to/default/image.jpg" alt="No Image Available">
+                    <% } %>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name"><%= product.product.name %></h3>
+                    <h4 class="product-price">$<%= product.product.price.toFixed(2) %></h4>
+                    <form action="/addtocart/<%= product._id %>" method="GET">
+                        <button type="submit" class="cart-btn">Add to Cart</button>
+                    </form>
+                    
+                    
+                </div>
+            </div>
+        <% }) %>
+    <% } %>
+</div>
+
+<%- include('./partials/footer') %>

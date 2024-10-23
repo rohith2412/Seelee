@@ -1,0 +1,134 @@
+
+.girl-poster-section {
+    display: flex;
+    align-items: center;
+    padding: 10rem;
+    margin: 2rem;
+    padding-bottom: 0;
+}
+
+.boy-poster-section {
+    display: flex;
+    align-items: center;
+    padding: 10rem;
+    margin: 2rem;
+}
+.girl-description {
+    flex: 1;
+    margin-left: 400px;
+    font-family: "Dancing Script", cursive;
+    font-weight: 400;
+    text-align: left;
+}
+
+.girl-description a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.boy-description {
+    flex: 1;
+    margin-left: 240px;
+    font-family: "Dancing Script", cursive;
+    font-weight: 400;
+    text-align: left;
+}
+
+
+.boy-description a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+.girl-description h2 {
+    font-size: 2rem;
+}
+
+.boy-description h2 {
+    font-size: 2rem;
+}
+
+.girl-description p {
+    font-size: 1.5rem;
+    max-width: 400px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.boy-description p {
+    font-size: 1.5rem;
+    max-width: 400px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.girl-poster {
+    flex: 0 0 auto;
+    text-align: left;
+    margin-right: 400px;
+}
+
+.boy-poster {
+    flex: 0 0 auto;
+    text-align: right;
+    margin-right: 0;
+    padding-left: 400px;
+}
+
+.girl-poster img {
+    max-width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.boy-poster img {
+    max-width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.About {
+    font-family: "Bad Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    padding: 4rem;
+    margin: 2rem;
+    margin-left: 40rem;
+    margin-right: 40rem;
+
+}
+
+.copyRight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 1100px;
+    padding-top: 1rem;
+  }
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-icons {
+        margin-top: 1rem;
+    }
+
+    .poster-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .poster img {
+        max-width: 80%;
+        margin-left: 0;
+    }
+}

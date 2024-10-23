@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Register</title>
+    <link rel="stylesheet" href="adminRegister.css">
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-container">
+            <h5>Create Owner</h5>
+            <form action="/adminRegister" method="post">
+                <div>
+                    <input type="text" placeholder="Name" name="ownerName" required>
+                </div>
+                <div>
+                    <input type="text" placeholder="Email" name="email" required>
+                </div>
+                <div>
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <div>
+                    <input type="submit" value="Create Owner">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+app.get("/adminPanel", async (req, res) => {
+    try {
+        const products = await productModel.find(); 
+        res.render("adminPanel", { products }); // Pass products to the view
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal Server Error");
+    }
+});

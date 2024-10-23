@@ -1,0 +1,20 @@
+<%- include('./partials/header') %>
+
+<div class="login-wrapper">
+    <div class="login-container">
+        <div class="SignIn">
+            <h5>Sign In</h5>
+        </div>
+        <form action="/login" method="post">
+            <input placeholder="Email" type="text" name="email">
+            <input placeholder="Password" type="password" name="password">
+            <input value="Login" type="submit">
+        </form>
+        <div class="Register">
+            <a>Don't have an account yet?</a>
+            <a href="/register">Create Account</a>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>

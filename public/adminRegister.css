@@ -1,0 +1,71 @@
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; 
+}
+
+.login-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center; 
+}
+
+.login-container h5 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    border-color: #333;
+    box-shadow: 0 0 0 3px rgba(41, 42, 43, 0.3);
+}
+
+.login-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container input[type="submit"]:hover {
+    background-color: #000;
+}
+
+.Register {
+    margin-top: 1rem;
+}
+
+.Register a {
+    display: block;
+    margin-top: 0.5rem;
+    color: #3182ce;
+    text-decoration: none;
+}
+
+.Register a:hover {
+    text-decoration: underline;
+}

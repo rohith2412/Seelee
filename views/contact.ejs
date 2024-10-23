@@ -1,0 +1,19 @@
+<%- include('./partials/header') %>
+<body class="">
+
+    <div class="container">
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <h3>Contact Me</h3>
+
+            <input type="hidden" name="access_key" value="2967ae41-30a6-477a-af86-67c34771de0a">
+        
+            <input type="text" name="name" placeholder="name" required>
+            <input type="email" name="email" placeholder="email" required>
+            <textarea name="message" placeholder="message" required></textarea>
+            <button type="submit">Submit Form</button>
+        
+        </form>
+
+    </div>
+
+    <%- include('./partials/footer') %>

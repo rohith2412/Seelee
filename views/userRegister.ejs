@@ -1,0 +1,21 @@
+<%- include('./partials/header') %>
+
+<div class="register-wrapper">
+    <div class="register-container">
+        <div class="CreateAccount">
+            <h5>Create Account</h5>
+        </div>
+        <form action="/register" method="post">
+            <input placeholder="Name" type="text" name="name">
+            <input placeholder="Email" type="text" name="email">
+            <input placeholder="Password" type="password" name="password">
+            <input value="Register" type="submit">
+        </form>
+        <div class="Login">
+            <a>Already have an account?</a>
+            <a href="/login">Login Account</a>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/shop.css">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/admin.css">
+
+</head>
+<body>
+    <h1>Upload Product</h1>
+    <form action="/create" method="POST" enctype="multipart/form-data">
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required><br><br>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" required><br><br>
+
+        <button type="submit">Upload Product</button>
+    </form>
+
+    <div class="Items">
+        <% if (products.length === 0) { %>
+            <p class="No-Products">No products available.</p>
+        <% } else { %>
+            <% products.forEach(function(product) { %>
+                <div class="Products">
+                    <div class="product-image">
+                        <% if (product.picture) { %>
+                            <img class="" src="data:image/jpeg;base64,<%= product.picture.toString('base64') %>" alt="<%= product.product.name %>">
+                        <% } else { %>
+                            <img class="" src="/path/to/default/image.jpg" alt="No Image Available">
+                        <% } %>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name"><%= product.product.name %></h3>
+                        <h4 class="product-price">₹ <%= product.product.price.toFixed(2) %></h4>
+                        <div>
+                            <a href="/delete/<%= product._id %>" >delete</a>
+                            <a href="/edit/<%= product._id  %>">edit</a>
+
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        <% } %>
+    </div>
+</body>
+</html>

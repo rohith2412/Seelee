@@ -1,0 +1,29 @@
+<%- include('./partials/header') %>
+
+    <div class="cart-container">
+        <% if (user.cart.length > 0) { %> 
+            <% user.cart.forEach(function(product) { %>
+                <div class="cart-item">
+                    <% if (product && product.picture) { %> 
+                        <img src="data:image/jpeg;base64,<%= product.picture.toString('base64') %>" alt="<%= product.name %>" class="item-image">
+                    <% } else { %>
+                        <p>No image available</p> 
+                    <% } %>
+                    <div class="item-details">
+                        <h3 class="product-name"><%= product.product.name %></h3>
+                        <h4 class="product-price">$<%= product.product.price.toFixed(2) %></h4>
+                        <form class="removefromcart" action="/removefromcart/<%= product._id %>" method="POST">
+                            <a href="#" class="delete-link" onclick="event.preventDefault(); this.closest('form').submit();">Delete</a>
+                        </form>
+                        
+                        
+                        
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p class="empty">Your cart is empty. Start shopping now!</p>
+        <% } %>
+    </div>
+
+    <%- include('./partials/footer') %>

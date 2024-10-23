@@ -1,0 +1,66 @@
+
+.container {
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 30px; 
+    width: 600px;
+    text-align: center;
+    transition: transform 0.3s; 
+    margin-left: 60rem;
+    margin-top: 15rem;
+}
+
+
+.container:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+/* Input and Textarea Styles */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* More rounded corners */
+    font-size: 1rem;
+    font-family: inherit; /* Ensure consistent font */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #6c63ff; /* Focused border color */
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5); /* Soft glow effect */
+    outline: none;
+}
+
+/* Button Styles */
+button {
+    background-color: #6c63ff; /* Primary Button Color */
+    color: #ffffff; /* White text */
+    padding: 12px; /* Increased padding */
+    border: none;
+    border-radius: 8px; /* More rounded corners */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
+    margin-top: 15px;
+    width: 100%; /* Full width */
+    font-weight: bold; /* Bold text */
+}
+
+button:hover {
+    background-color: #574bff; /* Darker shade on hover */
+    transform: translateY(-3px); /* Lift effect */
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .container {
+        width: 90%; /* Full width on smaller screens */
+    }
+}

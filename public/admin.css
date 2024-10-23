@@ -1,0 +1,63 @@
+
+
+h1 {
+    text-align: center;
+    color: #444; /* Slightly darker for headings */
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    max-width: 400px; /* Set a max width for the form */
+    margin: 20px auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding inside the form */
+    background: #fff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+label {
+    display: block; /* Make labels block level for better spacing */
+    margin-bottom: 8px; /* Space between label and input */
+    font-weight: bold; /* Bold labels for emphasis */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    width: 100%; /* Full-width inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space between inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Slightly rounded corners */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button Styles */
+button {
+    width: 100%; /* Full-width button */
+    padding: 10px; /* Padding inside the button */
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Larger font size */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 90%; /* Responsive form width on small screens */
+    }
+}
