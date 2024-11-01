@@ -15,12 +15,14 @@ const app = express();
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 const productModel = require('./models/productModel');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
+
 
 const checkUserLoggedIn = (req, res, next) => {
     const token = req.cookies.token;
@@ -256,9 +258,52 @@ app.post("/removefromcart/:id", checkUserLoggedIn, async (req, res) => {
     res.redirect("/cart");
 });
 
+app.post("/checkout", checkUserLoggedIn, async (req, res) => {
+    
+    try {
+        const user = await userModel.findOne({ email: req.user.email }).populate("cart");
+
+        const lineItems = user.cart.map((item) => ({
+            price_data: {
+                currency: 'usd',
+                product_data: {
+                    name: item.product.name,
+                },
+                unit_amount: item.product.price * 100,
+            },
+            quantity: 1,
+        }));
+
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types: ['card'],
+            line_items: lineItems,
+            mode: 'payment',
+            shipping_address_collection: {
+                allowed_countries : ['US', 'CA']
+            },
+            success_url: `${process.env.BASE_URL}/complete`,
+            cancel_url: `${process.env.BASE_URL}/cancel`,   
+        });
+
+        res.redirect(303, session.url);
+
+    } catch (error) {
+        console.error("Checkout error:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+
+app.get('/complete', (req, res) => {
+    res.send('your payment was succesful')
+})
+app.get('/cancel', (req, res) => {
+    res.redirect('/')
+})
+
 app.get("/about", (req, res) => {
     res.render("about", { userLoggedIn: req.userLoggedIn });
-});
+});1
 
 app.get("/contact", (req, res) => {
     res.render("contact", { userLoggedIn: req.userLoggedIn });

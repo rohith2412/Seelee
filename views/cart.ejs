@@ -20,7 +20,11 @@
                         
                     </div>
                 </div>
+                
             <% }) %>
+            <form action="/checkout" method="post">
+                <button class="checkout" type="submit">Proceed to checkout</button>
+            </form>            
         <% } else { %>
             <p class="empty">Your cart is empty. Start shopping now!</p>
         <% } %>
